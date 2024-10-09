@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Protected Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+        .message, .next-page {
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            const correctPassword = "yourPassword"; // Change to your desired password
+            if (password === correctPassword) {
+                document.getElementById("login").style.display = "none";
+                document.getElementById("message").style.display = "block";
+            } else {
+                alert("Incorrect password. Try again.");
+            }
+        }
+
+        function goToNextPage() {
+            document.getElementById("message").style.display = "none";
+            document.getElementById("next-page").style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <div id="login">
+        <h1>Welcome!</h1>
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password">
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+    
+    <div id="message" class="message">
+        <h1>Hey Love!</h1>
+        <p>You mean the world to me, and I cherish every moment we share. Your laughter is my favorite sound, and your smile brightens even the darkest days. I am grateful for you and everything you bring into my life. You are my ultimate happiness!</p>
+        <button onclick="goToNextPage()">Go to Next Page</button>
+    </div>
+
+    <div id="next-page" class="next-page">
+        <h1>123</h1>
+        <p>This is the content of your next page. Here, we can talk about our future together or anything else that makes us happy!</p>
+        <p><a href="https://forms.gle/hhrZZNPn7M6Xmmzp7" target="_blank">Your Link Here</a></p> <!-- Change the URL and link text -->
+        <button onclick="window.location.href='index.html'">Go Back</button>
+    </div>
+</body>
+</html>
